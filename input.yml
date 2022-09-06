@@ -1,0 +1,65 @@
+---
+# list of EOS devices
+devices: 
+  - 10.83.28.122
+  - 10.83.28.217
+  - 10.83.28.203
+
+# devices username
+username: arista
+
+# devices password
+password: arista 
+
+# directory to save the show commands collected and the reports generated
+output_directory: output
+
+# list EOS commands to collect in text format
+text_cmds:
+  - show logging system
+  - show running-config
+
+# list EOS commands to collect in JSON format
+json_cmds: 
+  
+# list EOS commands to collect in text and JSON format  
+text_and_json_cmds: 
+  - show hostname 
+  - show version 
+  - show reload cause history
+  - show reload cause full 
+  - show inventory 
+  - show ip bgp summary vrf all 
+  - show system environment temperature 
+  - show system environment temperature transceiver 
+  - show system environment cooling 
+  - show system environment power 
+  - show mlag detail 
+  - show interfaces description 
+  - show lldp neighbors
+
+# list of files (show commands) to include in a custom show tech-support text file
+custom_show_tech_support: 
+  - show hostname 
+  - show version 
+  - show reload cause history
+  - show inventory 
+  - show lldp neighbors
+  - show ip bgp summary vrf all 
+
+# list of topics to include in the report
+# Currently supported options are: print_hostname, print_version, check_inventory, check_power, check_cooling, check_temperature, check_temperature_transceivers, check_reload_cause_history, check_reload_cause_full, print_lldp, check_bgp, check_mlag
+audit: 
+  - print_hostname
+  - print_version
+  - check_inventory 
+  - check_power 
+  - check_cooling
+  - check_temperature
+  - check_temperature_transceivers
+  - check_reload_cause_history
+  - check_reload_cause_full
+  - print_lldp
+  - check_bgp
+  - check_mlag
+
